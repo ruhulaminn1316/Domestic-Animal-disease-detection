@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload Image - Animal Disease Detection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">🐮</div>
+    <h2>Animal AI</h2>
+  </div>
+  <a href="index.html">📊 Dashboard</a>
+  <a href="index.html">📊 Dashboard</a>
+  <a href="upload.html" class="active">📷 Upload Image</a>
+  <a href="symptoms.html">📝 Enter Symptoms</a>
+  <a href="history.html">📚 Disease History</a>
+  <a href="#">🚪 Log Out</a>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <h3><span class="topbar-logo">🐮</span> Animal AI</h3>
+    <div class="topbar-user">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect fill='%236e9f8f' width='40' height='40' rx='20'/%3E%3Ctext x='20' y='28' text-anchor='middle' fill='white' font-size='20' font-family='Arial'%3ER%3C/text%3E%3C/svg%3E" alt="User">
+      <strong>Ruhul Amin</strong>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h2 style="color: #2d3748; font-size: 24px; margin-bottom: 25px; font-weight: 700;">Upload Animal Image</h2>
+
+    <!-- Upload Section -->
+    <div class="upload-container">
+      <h2>🖼️ Upload Animal Image for Detection</h2>
+      <p style="color: #64748b; margin-bottom: 20px;">Upload a clear image of your animal to detect potential diseases using AI technology</p>
+      
+      <form id="uploadForm">
+        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+          <div class="upload-icon">📤</div>
+          <p><strong>Click to browse</strong> or drag and drop</p>
+          <p style="font-size: 14px; color: #94a3b8;">Supported formats: JPG, PNG, JPEG (Max 5MB)</p>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
+        
+        <div id="imagePreview" style="margin: 20px 0; text-align: center;"></div>
+        
+        <div class="form-group">
+          <label>Animal Type</label>
+          <select id="animalType" required>
+            <option value="">Select Animal Type</option>
+            <option value="cow">Cow</option>
+            <option value="goat">Goat</option>
+            <option value="sheep">Sheep</option>
+            <option value="buffalo">Buffalo</option>
+            <option value="chicken">Chicken</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Additional Notes (Optional)</label>
+          <textarea id="notes" placeholder="Any additional information about the animal..."></textarea>
+        </div>
+        
+        <div style="display: flex; gap: 10px; margin-top: 30px;">
+          <button type="submit" class="btn green">🔍 Analyze Image</button>
+          <button type="button" class="btn orange" onclick="resetForm()">🔄 Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+function previewImage(event) {
+  const file = event.target.files[0];
+  const preview = document.getElementById('imagePreview');
+  
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      preview.innerHTML = `
+        <img src="${e.target.result}" style="max-width: 100%; max-height: 400px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <p style="margin-top: 15px; color: #6e9f8f; font-weight: 600;">✅ Image loaded: ${file.name}</p>
+      `;
+    }
+    reader.readAsDataURL(file);
+  }
+}
+
+function resetForm() {
+  document.getElementById('uploadForm').reset();
+  document.getElementById('imagePreview').innerHTML = '';
+}
+
+document.getElementById('uploadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const animalType = document.getElementById('animalType').value;
+  const fileInput = document.getElementById('fileInput');
+  
+  if (!fileInput.files[0]) {
+    alert('⚠️ Please select an image first!');
+    return;
+  }
+  
+  if (!animalType) {
+    alert('⚠️ Please select an animal type!');
+    return;
+  }
+  
+  // Simulate processing
+  alert('🔄 Analyzing image... Redirecting to results page.');
+  setTimeout(() => {
+    window.location.href = 'result.html';
+  }, 1000);
+});
+</script>
+
+</body>
+</html>

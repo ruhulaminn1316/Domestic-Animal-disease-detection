@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Detection Result - Animal Disease Detection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">🐮</div>
+    <h2>Animal AI</h2>
+  </div>
+  <a href="index.html">📊 Dashboard</a>
+  <a href="index.html">📊 Dashboard</a>
+  <a href="upload.html">📷 Upload Image</a>
+  <a href="symptoms.html">📝 Enter Symptoms</a>
+  <a href="history.html">📚 Disease History</a>
+  <a href="#">🚪 Log Out</a>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <h3><span class="topbar-logo">🐮</span> Animal AI</h3>
+    <div class="topbar-user">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect fill='%236e9f8f' width='40' height='40' rx='20'/%3E%3Ctext x='20' y='28' text-anchor='middle' fill='white' font-size='20' font-family='Arial'%3ER%3C/text%3E%3C/svg%3E" alt="User">
+      <strong>Ruhul Amin</strong>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h2 style="color: #2d3748; font-size: 24px; margin-bottom: 25px; font-weight: 700;">Detection Result</h2>
+
+    <!-- Result Container -->
+    <div class="result-container">
+      <h2>🎯 Disease Detection Result</h2>
+      
+      <!-- Result Header -->
+      <div class="result-header">
+        <h3>Detected Disease</h3>
+        <p style="font-size: 36px; margin: 15px 0; font-weight: 700;">Bovine Foot Rot</p>
+        <div class="confidence">92% Confidence</div>
+        <div class="progress" style="max-width: 400px; margin: 20px auto;">
+          <span style="width: 92%;"></span>
+        </div>
+      </div>
+      
+      <!-- Disease Description -->
+      <div class="result-details">
+        <h4>📖 About the Disease</h4>
+        <p>Foot rot is a common and contagious disease affecting cattle hooves, caused by bacteria. It results in inflammation and infection of the tissues between the toes, leading to lameness and discomfort. Early detection and treatment are crucial to prevent spread and complications.</p>
+      </div>
+      
+      <!-- Symptoms Match -->
+      <div class="result-details">
+        <h4>✅ Matched Symptoms</h4>
+        <ul>
+          <li>Severe lameness and difficulty walking</li>
+          <li>Swelling between the toes or around the hoof</li>
+          <li>Foul-smelling discharge from the affected area</li>
+          <li>Elevated body temperature (fever)</li>
+          <li>Reduced appetite and weight loss</li>
+        </ul>
+      </div>
+      
+      <!-- Treatment Recommendations -->
+      <div class="result-details">
+        <h4>💊 Treatment Recommendations</h4>
+        <p><strong>Immediate Actions:</strong></p>
+        <ul>
+          <li>Clean and disinfect the affected hoof thoroughly</li>
+          <li>Apply topical antibiotics (tetracycline or oxytetracycline)</li>
+          <li>Administer systemic antibiotics as prescribed by veterinarian</li>
+          <li>Provide pain relief medication if necessary</li>
+          <li>Isolate the affected animal to prevent spread</li>
+        </ul>
+        <p style="margin-top: 15px;"><strong>Long-term Care:</strong></p>
+        <ul>
+          <li>Maintain dry and clean housing conditions</li>
+          <li>Regular hoof trimming and inspection</li>
+          <li>Footbath treatments for prevention</li>
+          <li>Improve nutrition and immunity</li>
+          <li>Monitor other animals in the herd</li>
+        </ul>
+      </div>
+      
+      <!-- Veterinary Consultation -->
+      <div class="result-details" style="background: linear-gradient(135deg, #fed7d7 0%, #feebc8 100%); border-left: 5px solid #f56565;">
+        <h4 style="color: #c53030;">⚠️ Important Notice</h4>
+        <p style="color: #742a2a; font-weight: 500;">This is an AI-powered preliminary diagnosis. Please consult a qualified veterinarian for professional examination and treatment. Early veterinary intervention significantly improves treatment outcomes.</p>
+      </div>
+      
+      <!-- Prevention Tips -->
+      <div class="result-details">
+        <h4>🛡️ Prevention Tips</h4>
+        <ul>
+          <li>Maintain proper hygiene in animal housing areas</li>
+          <li>Ensure adequate drainage to avoid muddy conditions</li>
+          <li>Regular hoof care and trimming schedule</li>
+          <li>Implement routine footbath protocols</li>
+          <li>Monitor herd health regularly</li>
+          <li>Quarantine new animals before introducing to herd</li>
+          <li>Provide balanced nutrition for strong immunity</li>
+        </ul>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button class="btn green" onclick="window.print()">🖨️ Print Report</button>
+        <button class="btn blue" onclick="saveReport()">💾 Save Report</button>
+        <button class="btn orange" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+function saveReport() {
+  alert('✅ Report saved successfully! You can access it from Disease History.');
+}
+
+// Add fade-in animation
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.result-container');
+  container.style.opacity = '0';
+  container.style.transform = 'translateY(20px)';
+  
+  setTimeout(() => {
+    container.style.transition = 'all 0.6s ease';
+    container.style.opacity = '1';
+    container.style.transform = 'translateY(0)';
+  }, 100);
+});
+</script>
+
+</body>
+</html>
