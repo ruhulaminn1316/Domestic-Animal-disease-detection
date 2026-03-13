@@ -15,8 +15,9 @@ function ProtectedPage({ children }) {
     return <div className="login-body">Checking login status...</div>
   }
 
+  // Firebase configured না থাকলে demo mode এ সরাসরি page দেখাও
   if (!configured) {
-    return <Navigate to="/login" replace />
+    return <AppShell>{children}</AppShell>
   }
 
   if (!user) {
