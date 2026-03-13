@@ -37,7 +37,7 @@ function LoginPage() {
       <div className="login-shell">
         <div className="login-card">
           <div className="login-badge">🐮</div>
-          <p className="login-kicker">Animal AI</p>
+          <p className="login-kicker">Domestic Animal Disease Detection</p>
           <h1>Login with Google</h1>
           <p className="login-text">
             আপনার Gmail / Google account দিয়ে secure ভাবে sign in করুন। Login হলে dashboard এ

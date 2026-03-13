@@ -9,7 +9,7 @@ function Topbar() {
   return (
     <div className="topbar">
       <h3>
-        <span className="topbar-logo">🐮</span> Animal AI
+        <span className="topbar-logo">🐮</span> Domestic Animal Disease Detection
       </h3>
       <div className="topbar-user">
         <img

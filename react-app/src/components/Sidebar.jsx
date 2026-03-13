@@ -9,7 +9,7 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebar-header">
         <div className="sidebar-logo">🐮</div>
-        <h2>Animal AI</h2>
+        <h2>Domestic Animal<br/>Disease Detection</h2>
       </div>
 
       <NavLink to="/" end>
