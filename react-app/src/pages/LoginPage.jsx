@@ -230,14 +230,6 @@ function LoginPage() {
           </button>
           <p className={`auth-status ${statusType}`}>{status}</p>
           {debugCode && <p className="auth-debug-code">Debug code: {debugCode}</p>}
-
-          <div className="login-note">
-            <strong>Setup note:</strong>
-            <span>
-              Firebase config না দিলে Google login কাজ করবে না। Config বসানোর পর GitHub Pages
-              থেকেও login করা যাবে।
-            </span>
-          </div>
         </div>
       </div>
     </div>

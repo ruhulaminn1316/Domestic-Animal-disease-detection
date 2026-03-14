@@ -7,6 +7,7 @@ import ResultPage from "./pages/ResultPage"
 import HistoryPage from "./pages/HistoryPage"
 import LoginPage from "./pages/LoginPage"
 import ProfilePage from "./pages/ProfilePage"
+import WelcomePage from "./pages/WelcomePage"
 import { useAuth } from "./lib/auth-context"
 
 function ProtectedPage({ children }) {
@@ -18,7 +19,7 @@ function ProtectedPage({ children }) {
 
   // Firebase configured থাকলে login enforce করো
   if (configured && !user) {
-    return <Navigate to="/login" replace />
+    return <Navigate to="/welcome" replace />
   }
 
   // Firebase configured না থাকলে demo mode এ সরাসরি page দেখাও
@@ -28,6 +29,7 @@ function ProtectedPage({ children }) {
 function App() {
   return (
     <Routes>
+      <Route path="/welcome" element={<WelcomePage />} />
       <Route path="/login" element={<LoginPage />} />
 
       <Route
@@ -79,7 +81,7 @@ function App() {
         }
       />
 
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<Navigate to="/welcome" replace />} />
     </Routes>
   )
 }
