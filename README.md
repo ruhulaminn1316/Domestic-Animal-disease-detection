@@ -268,6 +268,8 @@ A `render.yaml` Blueprint is included at the repo root for one-click deployment.
 [![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ruhulaminn1316)
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/mdruhulaminasifislam/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ruhulaminn1316)
+[![Email](https://img.shields.io/badge/Email-ruhulaminn1316%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ruhulaminn1316@gmail.com)
+![Phone](https://img.shields.io/badge/Phone-01737145602-2e5b4b?style=for-the-badge&logo=phonepe&logoColor=white)
 
 <br>
 </td>
@@ -301,6 +303,7 @@ A `render.yaml` Blueprint is included at the repo root for one-click deployment.
 [![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rokeyaritucse2026)
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/rokeya.ritu.3)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rokeya-khatun-ritu-618111209/)
+[![Email](https://img.shields.io/badge/Email-rokeyaritu3%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rokeyaritu3@gmail.com)
 
 <br>
 </td>
