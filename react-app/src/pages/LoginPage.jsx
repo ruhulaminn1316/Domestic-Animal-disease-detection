@@ -8,6 +8,7 @@ function LoginPage() {
   const [authMode, setAuthMode] = useState("signin")
   const [status, setStatus] = useState("Google অথবা Email/Password দিয়ে sign in করুন।")
   const [statusType, setStatusType] = useState("info")
+  const [debugCode, setDebugCode] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [fieldErrors, setFieldErrors] = useState({ email: "", password: "" })
@@ -44,6 +45,8 @@ function LoginPage() {
   }
 
   const handleGoogleLogin = async () => {
+    setDebugCode("")
+
     if (!configured) {
       setStatus("Google login চালু করতে আগে src/lib/firebaseConfig.js এ Firebase config বসান।")
       setStatusType("error")
@@ -61,12 +64,14 @@ function LoginPage() {
     } catch (error) {
       setStatus(error.message || "Google login failed.")
       setStatusType("error")
+      setDebugCode(error.code || "unknown")
       setSigningIn(false)
     }
   }
 
   const handleEmailAuth = async (event) => {
     event.preventDefault()
+    setDebugCode("")
     setFieldErrors({ email: "", password: "" })
 
     if (!configured) {
@@ -98,11 +103,13 @@ function LoginPage() {
     } catch (error) {
       setStatus(error.message || "Email authentication failed.")
       setStatusType("error")
+      setDebugCode(error.code || "unknown")
       setSigningIn(false)
     }
   }
 
   const handleForgotPassword = async () => {
+    setDebugCode("")
     setFieldErrors((currentErrors) => ({ ...currentErrors, email: "" }))
 
     if (!configured) {
@@ -135,6 +142,7 @@ function LoginPage() {
     } catch (error) {
       setStatus(error.message || "Password reset failed.")
       setStatusType("error")
+      setDebugCode(error.code || "unknown")
     } finally {
       setSigningIn(false)
     }
@@ -227,6 +235,7 @@ function LoginPage() {
             {signingIn ? "Signing in..." : configured ? "Continue with Google" : "Configure Firebase First"}
           </button>
           <p className={`auth-status ${statusType}`}>{status}</p>
+          {debugCode && <p className="auth-debug-code">Debug code: {debugCode}</p>}
 
           <div className="login-note">
             <strong>Setup note:</strong>

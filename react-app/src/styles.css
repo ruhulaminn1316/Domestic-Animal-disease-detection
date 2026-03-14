@@ -291,6 +291,13 @@ body {
   color: #b43324;
 }
 
+.auth-debug-code {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-500);
+}
+
 .login-note {
   margin-top: 24px;
   border-radius: 14px;
