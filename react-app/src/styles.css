@@ -105,40 +105,6 @@ body {
   color: var(--ink-700);
 }
 
-.login-features {
-  display: grid;
-  gap: 10px;
-  margin-bottom: 24px;
-}
-
-.login-feature {
-  border-radius: 12px;
-  padding: 12px 14px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink-900);
-  background: linear-gradient(120deg, rgba(75, 140, 114, 0.12), rgba(75, 130, 178, 0.12));
-}
-
-.login-feature-btn {
-  width: 100%;
-  border: 1px solid rgba(75, 130, 178, 0.12);
-  font-family: inherit;
-  text-align: left;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-}
-
-.login-feature-btn:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-}
-
-.login-feature-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
 .google-login-btn {
   width: 100%;
   border: 1px solid rgba(30, 53, 45, 0.1);
