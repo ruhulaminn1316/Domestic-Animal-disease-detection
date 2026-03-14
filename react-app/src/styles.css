@@ -79,6 +79,8 @@ body {
 .welcome-page {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
+  height: 100dvh;
   overflow: hidden;
   display: grid;
   place-items: center;
@@ -88,6 +90,32 @@ body {
     radial-gradient(circle at 86% 18%, rgba(75, 130, 178, 0.22), transparent 38%),
     radial-gradient(circle at 82% 84%, rgba(203, 138, 66, 0.16), transparent 34%),
     linear-gradient(140deg, #f5f4ef 0%, #ebf2ef 52%, #edf4f8 100%);
+}
+
+.welcome-aurora {
+  position: absolute;
+  width: 64vw;
+  height: 64vw;
+  max-width: 780px;
+  max-height: 780px;
+  border-radius: 42% 58% 60% 40% / 40% 42% 58% 60%;
+  pointer-events: none;
+  opacity: 0.24;
+  filter: blur(18px);
+}
+
+.welcome-aurora-a {
+  top: -26vh;
+  left: -16vw;
+  background: linear-gradient(135deg, rgba(75, 140, 114, 0.8), rgba(87, 163, 132, 0.32));
+  animation: auroraShift 18s ease-in-out infinite;
+}
+
+.welcome-aurora-b {
+  right: -22vw;
+  bottom: -30vh;
+  background: linear-gradient(135deg, rgba(75, 130, 178, 0.75), rgba(203, 138, 66, 0.3));
+  animation: auroraShift 22s ease-in-out infinite reverse;
 }
 
 .welcome-glow {
@@ -117,16 +145,41 @@ body {
 .welcome-noise {
   position: absolute;
   inset: 0;
-  opacity: 0.2;
+  opacity: 0.14;
   pointer-events: none;
   background-image: radial-gradient(rgba(20, 36, 46, 0.2) 0.6px, transparent 0.6px);
   background-size: 3px 3px;
+}
+
+.welcome-spark {
+  position: absolute;
+  width: 140px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.92), transparent);
+  opacity: 0.46;
+  pointer-events: none;
+}
+
+.welcome-spark-a {
+  top: 24%;
+  left: 8%;
+  transform: rotate(-20deg);
+  animation: sparkMove 8.5s ease-in-out infinite;
+}
+
+.welcome-spark-b {
+  bottom: 19%;
+  right: 9%;
+  transform: rotate(-24deg);
+  animation: sparkMove 9.5s ease-in-out infinite reverse;
 }
 
 .welcome-shell {
   position: relative;
   z-index: 2;
   width: min(1120px, 100%);
+  height: min(760px, calc(100dvh - 86px));
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 26px;
@@ -157,6 +210,7 @@ body {
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  animation: fadeSlideIn 0.6s ease both;
 }
 
 .welcome-hero h1 {
@@ -164,6 +218,8 @@ body {
   line-height: 1.07;
   letter-spacing: -0.03em;
   margin-bottom: 12px;
+  animation: fadeSlideIn 0.72s ease both;
+  animation-delay: 0.08s;
 }
 
 .welcome-hero h1 span {
@@ -178,6 +234,8 @@ body {
   color: var(--ink-700);
   max-width: 620px;
   margin-bottom: 24px;
+  animation: fadeSlideIn 0.8s ease both;
+  animation-delay: 0.14s;
 }
 
 .welcome-glance-cards {
@@ -185,6 +243,8 @@ body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   margin-bottom: 18px;
+  animation: fadeSlideIn 0.82s ease both;
+  animation-delay: 0.2s;
 }
 
 .welcome-glance-card {
@@ -214,6 +274,8 @@ body {
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 18px;
+  animation: fadeSlideIn 0.9s ease both;
+  animation-delay: 0.26s;
 }
 
 .welcome-btn {
@@ -250,6 +312,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  animation: fadeSlideIn 1s ease both;
+  animation-delay: 0.32s;
 }
 
 .welcome-meta span {
@@ -267,6 +331,31 @@ body {
   padding: 34px;
   overflow: hidden;
   animation: riseIn 0.8s ease both;
+  isolation: isolate;
+}
+
+.welcome-light-trail {
+  position: absolute;
+  width: 320px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.86), transparent);
+  opacity: 0.54;
+  transform-origin: center;
+  z-index: 0;
+}
+
+.welcome-light-trail-a {
+  top: 24%;
+  left: -24%;
+  transform: rotate(18deg);
+  animation: trailSweep 9s ease-in-out infinite;
+}
+
+.welcome-light-trail-b {
+  bottom: 18%;
+  right: -24%;
+  transform: rotate(-18deg);
+  animation: trailSweep 10.8s ease-in-out infinite reverse;
 }
 
 .welcome-stage-rings {
@@ -315,6 +404,8 @@ body {
   background: linear-gradient(145deg, rgba(47, 92, 79, 0.94), rgba(75, 130, 178, 0.92));
   box-shadow: 0 18px 34px rgba(32, 64, 54, 0.34);
   color: #f4faf8;
+  z-index: 2;
+  animation: coreBeat 3.4s ease-in-out infinite;
 }
 
 .welcome-mascot {
@@ -334,6 +425,7 @@ body {
   width: 100%;
   height: 100%;
   min-height: 460px;
+  z-index: 1;
 }
 
 .animal-chip {
@@ -387,6 +479,7 @@ body {
   background-size: 32px 32px;
   opacity: 0.55;
   mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.9) 40%, transparent 78%);
+  animation: rotateGrid 36s linear infinite;
 }
 
 .welcome-trust-strip {
@@ -401,6 +494,8 @@ body {
   backdrop-filter: blur(10px);
   padding: 7px 15px;
   box-shadow: var(--shadow-sm);
+  animation: fadeSlideIn 0.95s ease both;
+  animation-delay: 0.46s;
 }
 
 .welcome-trust-strip p {
@@ -431,6 +526,16 @@ body {
   }
 }
 
+@keyframes coreBeat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.045);
+  }
+}
+
 @keyframes driftGlow {
   0%,
   100% {
@@ -452,6 +557,60 @@ body {
   100% {
     opacity: 0;
     transform: scale(1.2);
+  }
+}
+
+@keyframes rotateGrid {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.04);
+  }
+}
+
+@keyframes auroraShift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(24px, -28px) rotate(10deg) scale(1.08);
+  }
+}
+
+@keyframes sparkMove {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateX(0) rotate(-20deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(16px) rotate(-20deg);
+  }
+}
+
+@keyframes trailSweep {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: translateX(0) rotate(18deg);
+  }
+  50% {
+    opacity: 0.62;
+    transform: translateX(34px) rotate(18deg);
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1613,6 +1772,7 @@ input[type="file"] {
 @media (max-width: 1080px) {
   .welcome-shell {
     grid-template-columns: 1fr;
+    height: auto;
   }
 
   .welcome-stage {
@@ -1647,7 +1807,9 @@ input[type="file"] {
 
 @media (max-width: 768px) {
   .welcome-page {
-    padding: 18px 14px 60px;
+    min-height: 100svh;
+    height: auto;
+    padding: 18px 14px 64px;
   }
 
   .welcome-hero,
@@ -1685,6 +1847,21 @@ input[type="file"] {
     min-height: 360px;
   }
 
+  .welcome-stage-rings span:nth-child(1) {
+    width: 160px;
+    height: 160px;
+  }
+
+  .welcome-stage-rings span:nth-child(2) {
+    width: 210px;
+    height: 210px;
+  }
+
+  .welcome-stage-rings span:nth-child(3) {
+    width: 270px;
+    height: 270px;
+  }
+
   .animal-chip {
     min-width: 82px;
     padding: 8px 10px;
@@ -1715,6 +1892,17 @@ input[type="file"] {
 
   .welcome-trust-strip p {
     letter-spacing: 0.04em;
+  }
+
+  .welcome-aurora {
+    width: 92vw;
+    height: 92vw;
+    opacity: 0.2;
+  }
+
+  .welcome-spark,
+  .welcome-light-trail {
+    display: none;
   }
 
   .app {

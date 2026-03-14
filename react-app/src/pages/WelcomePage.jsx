@@ -22,9 +22,13 @@ function WelcomePage() {
 
   return (
     <div className="welcome-page">
+      <div className="welcome-aurora welcome-aurora-a" aria-hidden="true" />
+      <div className="welcome-aurora welcome-aurora-b" aria-hidden="true" />
       <div className="welcome-glow welcome-glow-left" />
       <div className="welcome-glow welcome-glow-right" />
       <div className="welcome-noise" aria-hidden="true" />
+      <div className="welcome-spark welcome-spark-a" aria-hidden="true" />
+      <div className="welcome-spark welcome-spark-b" aria-hidden="true" />
 
       <div className="welcome-shell">
         <section className="welcome-hero">
@@ -66,6 +70,9 @@ function WelcomePage() {
         </section>
 
         <section className="welcome-stage" aria-hidden="true">
+          <div className="welcome-light-trail welcome-light-trail-a" />
+          <div className="welcome-light-trail welcome-light-trail-b" />
+
           <div className="welcome-stage-rings">
             <span />
             <span />
