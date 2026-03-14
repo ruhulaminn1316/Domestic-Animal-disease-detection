@@ -239,73 +239,69 @@ A `render.yaml` Blueprint is included at the repo root for one-click deployment.
 
 <table>
 <tr>
+<td align="center" width="50%">
+<br>
 
-<td align="center" width="50%" style="padding: 24px;">
+<a href="https://github.com/ruhulaminn1316">
+  <img src="https://images.weserv.nl/?url=github.com/ruhulaminn1316.png&w=120&h=120&mask=circle&maxage=7d" width="120" height="120" alt="Ruhul Amin"/>
+</a>
 
-<img src="https://github.com/ruhulaminn1316.png" width="140" height="140" alt="Ruhul Amin" />
+<br>
+<h3>Ruhul Amin</h3>
 
-<br><br>
+![Lead Developer](https://img.shields.io/badge/Lead%20Developer-%232e5b4b?style=flat-square)
+![Full Stack](https://img.shields.io/badge/Full--Stack%20Aspirant-0d1117?style=flat-square&logo=stackshare&logoColor=white)
 
-### 👨‍💻 Ruhul Amin
-**Lead Developer**
+<br>
 
-> 💻 Web Dev &nbsp;|&nbsp; 🤖 AI &nbsp;|&nbsp; 🚀 Full-Stack Aspirant
+| | |
+|---|---|
+| 🎓 | Green University of Bangladesh |
+| 📚 | BSc in Computer Science & Engineering |
+| 🗓️ | 11th Semester · Class of **2026** |
+| 💻 | Web Development & AI Systems |
+| 📖 | Learning Django & Backend Dev |
+| 🎯 | Future Full-Stack Developer |
 
----
+<br>
 
-🎓 **Green University of Bangladesh**  
-📚 BSc in CSE — **11th Semester** · Class of **2026**
+[![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ruhulaminn1316)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/ruhulaminn1316)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ruhulaminn1316)
 
----
-
-**About Me**
-
-- 🔥 Passionate about **Web Development** and **AI systems**
-- 📖 Currently learning **Django** & backend technologies
-- 🛠 Love building real-world apps — AI tools & Management Systems
-- 🤝 Active in social volunteering & educational organizations
-- 🎯 Goal: Skilled **Full-Stack Developer** & open-source contributor
-
----
-
-[![GitHub](https://img.shields.io/badge/GitHub-ruhulaminn1316-181717?style=for-the-badge&logo=github)](https://github.com/ruhulaminn1316)  
-[![Facebook](https://img.shields.io/badge/Facebook-ruhulaminn1316-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/ruhulaminn1316)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ruhulaminn1316-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ruhulaminn1316)
-
+<br>
 </td>
 
-<td align="center" width="50%" style="padding: 24px;">
+<td align="center" width="50%">
+<br>
 
-<img src="https://github.com/rokeyaritucse2026.png" width="140" height="140" alt="Rokeya Khatun Ritu" />
+<a href="https://github.com/rokeyaritucse2026">
+  <img src="https://images.weserv.nl/?url=github.com/rokeyaritucse2026.png&w=120&h=120&mask=circle&maxage=7d" width="120" height="120" alt="Rokeya Khatun Ritu"/>
+</a>
 
-<br><br>
+<br>
+<h3>Rokeya Khatun Ritu</h3>
 
-### 👩‍💻 Rokeya Khatun Ritu
-**Developer & Researcher**
+![Developer](https://img.shields.io/badge/Developer-%232e5b4b?style=flat-square)
+![Researcher](https://img.shields.io/badge/Researcher-0d1117?style=flat-square&logo=researchgate&logoColor=white)
 
-> 🔬 Research &nbsp;|&nbsp; 🧠 AI &nbsp;|&nbsp; 📊 Data Analysis
+<br>
 
----
+| | |
+|---|---|
+| 🎓 | Green University of Bangladesh |
+| 📚 | BSc in Computer Science & Engineering |
+| 🗓️ | 11th Semester · Class of **2026** |
+| 🔬 | AI & Disease Detection Research |
+| 📊 | Data Analysis & Intelligent Systems |
+| 🌱 | Passionate Learner & Collaborator |
 
-🎓 **Green University of Bangladesh**  
-📚 BSc in CSE — **11th Semester** · Class of **2026**
+<br>
 
----
+[![GitHub](https://img.shields.io/badge/GitHub-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rokeyaritucse2026)
 
-**About Me**
-
-- 🤝 Collaborator on AI-based disease detection research
-- 📊 Interested in data analysis and intelligent systems
-- 🐄 Focused on animal welfare through technology
-- 🎓 Dedicated CSE student with hands-on project experience
-- 🌱 Continuously growing as a developer and researcher
-
----
-
-[![GitHub](https://img.shields.io/badge/GitHub-rokeyaritucse2026-181717?style=for-the-badge&logo=github)](https://github.com/rokeyaritucse2026)
-
+<br>
 </td>
-
 </tr>
 </table>
 
