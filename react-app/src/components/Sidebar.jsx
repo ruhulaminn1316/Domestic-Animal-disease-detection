@@ -1,9 +1,23 @@
 import { NavLink, useNavigate } from "react-router-dom"
+import { useState } from "react"
 import { useAuth } from "../lib/auth-context"
 
 function Sidebar() {
   const navigate = useNavigate()
   const { configured, logoutUser } = useAuth()
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
+
+  const handleLogout = async () => {
+    try {
+      setIsLoggingOut(true)
+      if (configured) {
+        await logoutUser()
+      }
+      navigate("/login")
+    } finally {
+      setIsLoggingOut(false)
+    }
+  }
 
   return (
     <div className="sidebar">
@@ -18,19 +32,15 @@ function Sidebar() {
       <NavLink to="/upload">📷 Upload Image</NavLink>
       <NavLink to="/symptoms">📝 Enter Symptoms</NavLink>
       <NavLink to="/history">📚 Disease History</NavLink>
-      <a
-        href="#"
-        className="logout-link"
-        onClick={async (event) => {
-          event.preventDefault()
-          if (configured) {
-            await logoutUser()
-          }
-          navigate("/login")
-        }}
+      <NavLink to="/profile">👤 Edit Profile</NavLink>
+      <button
+        type="button"
+        className="sidebar-logout-btn"
+        onClick={handleLogout}
+        disabled={isLoggingOut}
       >
-        🚪 Log Out
-      </a>
+        {isLoggingOut ? "⏳ Logging out..." : "🚪 Log Out"}
+      </button>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import SymptomsPage from "./pages/SymptomsPage"
 import ResultPage from "./pages/ResultPage"
 import HistoryPage from "./pages/HistoryPage"
 import LoginPage from "./pages/LoginPage"
+import ProfilePage from "./pages/ProfilePage"
 import { useAuth } from "./lib/auth-context"
 
 function ProtectedPage({ children }) {
@@ -15,15 +16,12 @@ function ProtectedPage({ children }) {
     return <div className="login-body">Checking login status...</div>
   }
 
-  // Firebase configured না থাকলে demo mode এ সরাসরি page দেখাও
-  if (!configured) {
-    return <AppShell>{children}</AppShell>
-  }
-
-  if (!user) {
+  // Firebase configured থাকলে login enforce করো
+  if (configured && !user) {
     return <Navigate to="/login" replace />
   }
 
+  // Firebase configured না থাকলে demo mode এ সরাসরি page দেখাও
   return <AppShell>{children}</AppShell>
 }
 
@@ -69,6 +67,14 @@ function App() {
         element={
           <ProtectedPage>
             <HistoryPage />
+          </ProtectedPage>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <ProtectedPage>
+            <ProfilePage />
           </ProtectedPage>
         }
       />

@@ -1,5 +1,7 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { useNavigate } from "react-router-dom"
+import * as tmImage from "@teachablemachine/image"
+import { MODEL_URL } from "../lib/modelConfig"
 
 const initialFormState = {
   animalType: "",
@@ -11,42 +13,58 @@ function UploadPage() {
   const [form, setForm] = useState(initialFormState)
   const [file, setFile] = useState(null)
   const [preview, setPreview] = useState("")
+  const [analyzing, setAnalyzing] = useState(false)
+  const [error, setError] = useState("")
+  const imgRef = useRef(null)
 
   const resetForm = () => {
     setForm(initialFormState)
     setFile(null)
     setPreview("")
+    setError("")
   }
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files?.[0]
-    if (!selectedFile) {
-      return
-    }
-
+    if (!selectedFile) return
     setFile(selectedFile)
+    setError("")
     const reader = new FileReader()
-    reader.onload = (loadEvent) => {
-      setPreview(loadEvent.target?.result || "")
-    }
+    reader.onload = (loadEvent) => setPreview(loadEvent.target?.result || "")
     reader.readAsDataURL(selectedFile)
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
+    if (!file) { setError("⚠️ Please select an image first!"); return }
+    if (!form.animalType) { setError("⚠️ Please select an animal type!"); return }
 
-    if (!file) {
-      window.alert("⚠️ Please select an image first!")
+    if (MODEL_URL.includes("YOUR_MODEL_ID")) {
+      // Model না থাকলে demo result দেখাও
+      navigate("/result", {
+        state: { disease: "Foot Rot", confidence: 92, animalType: form.animalType, demo: true }
+      })
       return
     }
 
-    if (!form.animalType) {
-      window.alert("⚠️ Please select an animal type!")
-      return
+    try {
+      setAnalyzing(true)
+      setError("")
+      const model = await tmImage.load(MODEL_URL + "model.json", MODEL_URL + "metadata.json")
+      const predictions = await model.predict(imgRef.current)
+      const top = predictions.reduce((a, b) => (a.probability > b.probability ? a : b))
+      navigate("/result", {
+        state: {
+          disease: top.className,
+          confidence: Math.round(top.probability * 100),
+          animalType: form.animalType,
+          demo: false
+        }
+      })
+    } catch (err) {
+      setError("❌ Model load failed. Check your MODEL_URL in modelConfig.js")
+      setAnalyzing(false)
     }
-
-    window.alert("🔄 Analyzing image... Redirecting to results page.")
-    navigate("/result")
   }
 
   return (
@@ -105,11 +123,21 @@ function UploadPage() {
             <div className="preview-panel">
               {preview ? (
                 <>
-                  <img src={preview} className="preview-image" alt="Uploaded animal preview" />
+                  <img
+                    ref={imgRef}
+                    src={preview}
+                    className="preview-image"
+                    alt="Uploaded animal preview"
+                    crossOrigin="anonymous"
+                  />
                   <p className="preview-caption">✅ Image loaded: {file?.name}</p>
                 </>
               ) : null}
             </div>
+
+            {error && (
+              <p style={{ color: "#b43324", fontWeight: 600, marginBottom: 8 }}>{error}</p>
+            )}
 
             <div className="form-group">
               <label>Animal Type</label>
@@ -138,10 +166,10 @@ function UploadPage() {
             </div>
 
             <div className="form-actions">
-              <button type="submit" className="btn green">
-                🔍 Analyze Image
+              <button type="submit" className="btn green" disabled={analyzing}>
+                {analyzing ? "⏳ Analyzing..." : "🔍 Analyze Image"}
               </button>
-              <button type="button" className="btn orange" onClick={resetForm}>
+              <button type="button" className="btn orange" onClick={resetForm} disabled={analyzing}>
                 🔄 Reset
               </button>
             </div>
