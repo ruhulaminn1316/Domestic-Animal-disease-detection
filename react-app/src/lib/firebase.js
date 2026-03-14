@@ -81,6 +81,33 @@ function normalizeAuthError(error, fallbackMessage) {
   return normalizedError
 }
 
+function createContextualAuthError(error, fallbackMessage, context) {
+  const code = error?.code
+
+  if (code === "auth/configuration-not-found" && context === "google") {
+    const contextualError = new Error(
+      "Google Sign-in provider enable করা নেই। Firebase Console > Authentication > Sign-in method > Google > Enable করুন।"
+    )
+    contextualError.code = code
+    contextualError.originalMessage = error?.message || ""
+    return contextualError
+  }
+
+  if (
+    (code === "auth/configuration-not-found" || code === "auth/operation-not-allowed") &&
+    context === "email-password"
+  ) {
+    const contextualError = new Error(
+      "Email/Password provider enable করা নেই। Firebase Console > Authentication > Sign-in method > Email/Password > Enable করুন।"
+    )
+    contextualError.code = code
+    contextualError.originalMessage = error?.message || ""
+    return contextualError
+  }
+
+  return normalizeAuthError(error, fallbackMessage)
+}
+
 function normalizeStorageError(error, fallbackMessage) {
   const code = error?.code
   const storageMessages = {
@@ -139,7 +166,7 @@ export async function loginWithGoogle() {
   try {
     return await signInWithPopup(auth, googleProvider)
   } catch (error) {
-    throw normalizeAuthError(error, "Google login failed. আবার চেষ্টা করুন।")
+    throw createContextualAuthError(error, "Google login failed. আবার চেষ্টা করুন।", "google")
   }
 }
 
@@ -150,7 +177,7 @@ export async function loginWithEmail({ email, password }) {
   try {
     return await signInWithEmailAndPassword(auth, email, password)
   } catch (error) {
-    throw normalizeAuthError(error, "Email sign in failed. আবার চেষ্টা করুন।")
+    throw createContextualAuthError(error, "Email sign in failed. আবার চেষ্টা করুন।", "email-password")
   }
 }
 
@@ -167,7 +194,7 @@ export async function registerWithEmail({ email, password }) {
     }
     return credential
   } catch (error) {
-    throw normalizeAuthError(error, "Account create করা যায়নি। আবার চেষ্টা করুন।")
+    throw createContextualAuthError(error, "Account create করা যায়নি। আবার চেষ্টা করুন।", "email-password")
   }
 }
 
