@@ -42,3 +42,41 @@ Default URL: `http://localhost:5173/`
 
 - Firebase config ছাড়া Google login disabled থাকবে
 - Firebase Console-এ `Authorized domains` এ local domain / deployed domain add করতে হবে
+
+## Render Deployment Setup
+
+এই project Render-এ Static Site হিসেবে deploy করতে ready করা হয়েছে।
+
+### Option A: Blueprint (recommended)
+
+Repo root-এ [render.yaml](render.yaml) add করা আছে।
+Render Dashboard থেকে:
+
+1. New + -> Blueprint
+2. GitHub repo connect করুন
+3. Render `render.yaml` detect করে service create করবে
+
+এই config-এ:
+
+- Build command: `npm install --prefix react-app && npm run build --prefix react-app`
+- Publish path: `./react-app/dist`
+- SPA rewrite: `/* -> /index.html`
+
+### Option B: Manual Static Site setup
+
+Render Dashboard -> New + -> Static Site:
+
+1. Root Directory: empty রাখুন (repo root)
+2. Build Command: `npm install --prefix react-app && npm run build --prefix react-app`
+3. Publish Directory: `react-app/dist`
+4. Redirect/Rewrites:
+   - Source: `/*`
+   - Destination: `/index.html`
+   - Action: Rewrite
+
+### Firebase domain (must do)
+
+Deploy হওয়ার পর আপনার `your-app.onrender.com` domain টি Firebase Console-এ add করুন:
+
+- Authentication -> Settings -> Authorized domains
+- Add: `your-app.onrender.com`
