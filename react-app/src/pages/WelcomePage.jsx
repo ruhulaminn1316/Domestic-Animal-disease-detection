@@ -24,6 +24,7 @@ function WelcomePage() {
     <div className="welcome-page">
       <div className="welcome-glow welcome-glow-left" />
       <div className="welcome-glow welcome-glow-right" />
+      <div className="welcome-noise" aria-hidden="true" />
 
       <div className="welcome-shell">
         <section className="welcome-hero">
@@ -36,6 +37,17 @@ function WelcomePage() {
             AI সহায়তায় animal disease early detect করুন, records track করুন, আর দ্রুত treatment decision
             নিন. Login বা Signup দিয়ে শুরু করুন।
           </p>
+
+          <div className="welcome-glance-cards" aria-hidden="true">
+            <div className="welcome-glance-card">
+              <strong>Instant Analysis</strong>
+              <small>Image-to-insight in seconds</small>
+            </div>
+            <div className="welcome-glance-card">
+              <strong>Field Friendly</strong>
+              <small>Works for day-to-day livestock care</small>
+            </div>
+          </div>
 
           <div className="welcome-actions">
             <button className="welcome-btn welcome-btn-primary" type="button" onClick={() => navigate("/login?mode=signin")}>
@@ -54,14 +66,20 @@ function WelcomePage() {
         </section>
 
         <section className="welcome-stage" aria-hidden="true">
+          <div className="welcome-stage-rings">
+            <span />
+            <span />
+            <span />
+          </div>
+
           <div className="welcome-stage-core">
             <div className="welcome-mascot">🐮</div>
             <p>Animal Health AI</p>
           </div>
 
           <div className="welcome-animal-orbit">
-            {animals.map((animal) => (
-              <div className="animal-chip" key={animal.name} style={{ animationDelay: animal.delay }}>
+            {animals.map((animal, index) => (
+              <div className="animal-chip" key={animal.name} style={{ animationDelay: animal.delay }} data-shift={index}>
                 <span>{animal.icon}</span>
                 <small>{animal.name}</small>
               </div>
@@ -70,6 +88,10 @@ function WelcomePage() {
 
           <div className="welcome-grid-lines" />
         </section>
+      </div>
+
+      <div className="welcome-trust-strip" aria-hidden="true">
+        <p>Designed for Farmers • Vets • Animal Health Teams</p>
       </div>
     </div>
   )

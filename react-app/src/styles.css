@@ -114,6 +114,15 @@ body {
   animation: driftGlow 9.5s ease-in-out infinite reverse;
 }
 
+.welcome-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(20, 36, 46, 0.2) 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
+}
+
 .welcome-shell {
   position: relative;
   z-index: 2;
@@ -169,6 +178,35 @@ body {
   color: var(--ink-700);
   max-width: 620px;
   margin-bottom: 24px;
+}
+
+.welcome-glance-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.welcome-glance-card {
+  border-radius: 14px;
+  border: 1px solid rgba(75, 130, 178, 0.18);
+  padding: 11px 12px;
+  background: linear-gradient(125deg, rgba(247, 252, 251, 0.88), rgba(238, 245, 251, 0.86));
+}
+
+.welcome-glance-card strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-900);
+  margin-bottom: 2px;
+}
+
+.welcome-glance-card small {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-700);
 }
 
 .welcome-actions {
@@ -231,6 +269,37 @@ body {
   animation: riseIn 0.8s ease both;
 }
 
+.welcome-stage-rings {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.welcome-stage-rings span {
+  position: absolute;
+  border-radius: 999px;
+  border: 1px solid rgba(75, 130, 178, 0.22);
+  animation: ringPulse 4.8s ease-out infinite;
+}
+
+.welcome-stage-rings span:nth-child(1) {
+  width: 190px;
+  height: 190px;
+}
+
+.welcome-stage-rings span:nth-child(2) {
+  width: 250px;
+  height: 250px;
+  animation-delay: 0.8s;
+}
+
+.welcome-stage-rings span:nth-child(3) {
+  width: 320px;
+  height: 320px;
+  animation-delay: 1.6s;
+}
+
 .welcome-stage-core {
   position: absolute;
   top: 50%;
@@ -278,7 +347,7 @@ body {
   border: 1px solid rgba(216, 226, 232, 0.9);
   background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow-sm);
-  animation: floatAnimal 5.2s ease-in-out infinite;
+  animation: floatAnimal 5.2s ease-in-out infinite, morphChip 7s ease-in-out infinite;
 }
 
 .animal-chip span {
@@ -299,6 +368,16 @@ body {
 .animal-chip:nth-child(5) { bottom: 12%; left: 14%; }
 .animal-chip:nth-child(6) { bottom: 9%; right: 17%; }
 
+.animal-chip[data-shift="1"],
+.animal-chip[data-shift="4"] {
+  animation-duration: 6s, 8.4s;
+}
+
+.animal-chip[data-shift="2"],
+.animal-chip[data-shift="5"] {
+  animation-duration: 5.6s, 7.6s;
+}
+
 .welcome-grid-lines {
   position: absolute;
   inset: 0;
@@ -308,6 +387,28 @@ body {
   background-size: 32px 32px;
   opacity: 0.55;
   mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.9) 40%, transparent 78%);
+}
+
+.welcome-trust-strip {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  border-radius: 999px;
+  border: 1px solid rgba(216, 226, 232, 0.9);
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(10px);
+  padding: 7px 15px;
+  box-shadow: var(--shadow-sm);
+}
+
+.welcome-trust-strip p {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-700);
 }
 
 @keyframes floatAnimal {
@@ -320,6 +421,16 @@ body {
   }
 }
 
+@keyframes morphChip {
+  0%,
+  100% {
+    border-radius: 18px;
+  }
+  50% {
+    border-radius: 24px 16px 22px 14px;
+  }
+}
+
 @keyframes driftGlow {
   0%,
   100% {
@@ -327,6 +438,20 @@ body {
   }
   50% {
     transform: translate(26px, -20px) scale(1.08);
+  }
+}
+
+@keyframes ringPulse {
+  0% {
+    opacity: 0.65;
+    transform: scale(0.86);
+  }
+  70% {
+    opacity: 0.08;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
   }
 }
 
@@ -1486,6 +1611,14 @@ input[type="file"] {
 .card:nth-child(6) { animation-delay: 0.24s; }
 
 @media (max-width: 1080px) {
+  .welcome-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-stage {
+    min-height: 420px;
+  }
+
   .dashboard-layout {
     grid-template-columns: 1fr;
   }
@@ -1513,6 +1646,77 @@ input[type="file"] {
 }
 
 @media (max-width: 768px) {
+  .welcome-page {
+    padding: 18px 14px 60px;
+  }
+
+  .welcome-hero,
+  .welcome-stage {
+    border-radius: 24px;
+  }
+
+  .welcome-hero {
+    padding: 28px 20px;
+  }
+
+  .welcome-hero h1 {
+    font-size: clamp(28px, 8.8vw, 38px);
+  }
+
+  .welcome-copy {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .welcome-glance-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-actions {
+    width: 100%;
+  }
+
+  .welcome-btn {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .welcome-animal-orbit {
+    min-height: 360px;
+  }
+
+  .animal-chip {
+    min-width: 82px;
+    padding: 8px 10px;
+  }
+
+  .animal-chip span {
+    font-size: 23px;
+  }
+
+  .animal-chip small {
+    font-size: 10px;
+  }
+
+  .welcome-stage-core {
+    width: 140px;
+    height: 140px;
+  }
+
+  .welcome-mascot {
+    font-size: 44px;
+  }
+
+  .welcome-trust-strip {
+    bottom: 10px;
+    width: calc(100% - 28px);
+    text-align: center;
+  }
+
+  .welcome-trust-strip p {
+    letter-spacing: 0.04em;
+  }
+
   .app {
     min-height: 100vh;
     border-radius: 0;
