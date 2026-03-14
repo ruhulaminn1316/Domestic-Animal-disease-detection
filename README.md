@@ -238,17 +238,23 @@ A `render.yaml` Blueprint is included at the repo root for one-click deployment.
 <table>
   <tr>
     <td align="center" width="50%">
-      <h3>Mohammed Raqib</h3>
+      <h3>Ruhul Amin</h3>
       <b>Lead Developer</b><br/>
       Full-Stack Development · Firebase Integration<br/>
       AI Model Integration · UI/UX Design<br/>
       Deployment & DevOps<br/><br/>
       <a href="https://github.com/ruhulaminn1316">
         <img src="https://img.shields.io/badge/GitHub-ruhulaminn1316-181717?style=flat-square&logo=github" />
+      </a>&nbsp;
+      <a href="https://facebook.com/ruhulaminn1316">
+        <img src="https://img.shields.io/badge/Facebook-ruhulaminn1316-1877F2?style=flat-square&logo=facebook&logoColor=white" />
+      </a>&nbsp;
+      <a href="https://linkedin.com/in/ruhulaminn1316">
+        <img src="https://img.shields.io/badge/LinkedIn-ruhulaminn1316-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
       </a>
     </td>
     <td align="center" width="50%">
-      <h3>Mst Rokeya Khatun Ritu</h3>
+      <h3>Rokeya Khatun Ritu</h3>
       <b>Developer & Researcher</b><br/>
       Research & Documentation<br/>
       AI Model Training · Testing & QA<br/>
@@ -269,5 +275,5 @@ This project is for academic and educational purposes.
 ---
 
 <div align="center">
-  Made with ❤️ by Mohammed Raqib & Mst Rokeya Khatun Ritu
+  Made with ❤️ by Ruhul Amin & Rokeya Khatun Ritu
 </div>
