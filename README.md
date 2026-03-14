@@ -321,5 +321,5 @@ This project is for academic and educational purposes.
 ---
 
 <div align="center">
-  Made with ❤️ by Ruhul Amin & Rokeya Khatun Ritu
+  Made by Ruhul Amin & Rokeya Khatun Ritu
 </div>
