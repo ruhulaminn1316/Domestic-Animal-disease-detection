@@ -148,6 +148,28 @@ function LoginPage() {
     }
   }
 
+  const handleFeatureAction = async (action) => {
+    if (action === "google") {
+      await handleGoogleLogin()
+      return
+    }
+
+    if (configured && !user) {
+      setStatus("এই section use করতে আগে login করতে হবে।")
+      setStatusType("error")
+      return
+    }
+
+    if (action === "dashboard") {
+      navigate("/", { replace: true })
+      return
+    }
+
+    if (action === "history") {
+      navigate("/history", { replace: true })
+    }
+  }
+
   return (
     <div className="login-body">
       <div className="login-shell">
@@ -226,9 +248,30 @@ function LoginPage() {
           </div>
 
           <div className="login-features">
-            <div className="login-feature">🔐 Secure Google sign-in</div>
-            <div className="login-feature">📊 Access dashboard & reports</div>
-            <div className="login-feature">🩺 Track animal health records</div>
+            <button
+              className="login-feature login-feature-btn"
+              type="button"
+              onClick={() => handleFeatureAction("google")}
+              disabled={signingIn || loading}
+            >
+              🔐 Secure Google sign-in
+            </button>
+            <button
+              className="login-feature login-feature-btn"
+              type="button"
+              onClick={() => handleFeatureAction("dashboard")}
+              disabled={signingIn || loading}
+            >
+              📊 Access dashboard & reports
+            </button>
+            <button
+              className="login-feature login-feature-btn"
+              type="button"
+              onClick={() => handleFeatureAction("history")}
+              disabled={signingIn || loading}
+            >
+              🩺 Track animal health records
+            </button>
           </div>
 
           <button className="google-login-btn" onClick={handleGoogleLogin} disabled={signingIn || loading}>
