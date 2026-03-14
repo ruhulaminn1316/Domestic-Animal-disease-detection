@@ -233,39 +233,83 @@ A `render.yaml` Blueprint is included at the repo root for one-click deployment.
 
 ---
 
-## 👥 Team
+## 👥 Meet the Team
 
-### 👨‍💻 Ruhul Amin — Lead Developer
+<div align="center">
 
-> 💻 Web Developer &nbsp;|&nbsp; 🎓 CSE Undergraduate &nbsp;|&nbsp; 💡 Tech Enthusiast &nbsp;|&nbsp; 📚 Lifelong Learner
+<table>
+<tr>
 
-**🧑‍💼 About**
+<td align="center" width="50%" style="padding: 24px;">
 
-- 🎓 Studying **Computer Science and Engineering (CSE)** at **Green University of Bangladesh**
-- 💡 Passionate about web development and AI-powered systems
-- 📚 Currently exploring **Django** and backend technologies
-- 🚀 Loves building real-world projects like Management Systems and AI tools
-- 🤝 Actively involved in social volunteering and educational organizations
-- 🎯 Goal: Become a skilled **Full-Stack Developer** and contribute to open-source
+<img src="https://github.com/ruhulaminn1316.png" width="140" height="140" alt="Ruhul Amin" />
 
-**🎓 Education**
+<br><br>
 
-🏫 Green University of Bangladesh &nbsp;|&nbsp; BSc in Computer Science and Engineering  
-📅 7th Semester &nbsp;|&nbsp; Expected Graduation: **2026**
+### 👨‍💻 Ruhul Amin
+**Lead Developer**
 
-**🔗 Connect**
-
-[![GitHub](https://img.shields.io/badge/GitHub-ruhulaminn1316-181717?style=flat-square&logo=github)](https://github.com/ruhulaminn1316)
-[![Facebook](https://img.shields.io/badge/Facebook-ruhulaminn1316-1877F2?style=flat-square&logo=facebook&logoColor=white)](https://facebook.com/ruhulaminn1316)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ruhulaminn1316-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/ruhulaminn1316)
+> 💻 Web Dev &nbsp;|&nbsp; 🤖 AI &nbsp;|&nbsp; 🚀 Full-Stack Aspirant
 
 ---
 
-### 👩‍💻 Rokeya Khatun Ritu — Developer & Researcher
+🎓 **Green University of Bangladesh**  
+📚 BSc in CSE — **11th Semester** · Class of **2026**
 
-**🔗 Connect**
+---
 
-[![GitHub](https://img.shields.io/badge/GitHub-rokeyaritucse2026-181717?style=flat-square&logo=github)](https://github.com/rokeyaritucse2026)
+**About Me**
+
+- 🔥 Passionate about **Web Development** and **AI systems**
+- 📖 Currently learning **Django** & backend technologies
+- 🛠 Love building real-world apps — AI tools & Management Systems
+- 🤝 Active in social volunteering & educational organizations
+- 🎯 Goal: Skilled **Full-Stack Developer** & open-source contributor
+
+---
+
+[![GitHub](https://img.shields.io/badge/GitHub-ruhulaminn1316-181717?style=for-the-badge&logo=github)](https://github.com/ruhulaminn1316)  
+[![Facebook](https://img.shields.io/badge/Facebook-ruhulaminn1316-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/ruhulaminn1316)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ruhulaminn1316-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ruhulaminn1316)
+
+</td>
+
+<td align="center" width="50%" style="padding: 24px;">
+
+<img src="https://github.com/rokeyaritucse2026.png" width="140" height="140" alt="Rokeya Khatun Ritu" />
+
+<br><br>
+
+### 👩‍💻 Rokeya Khatun Ritu
+**Developer & Researcher**
+
+> 🔬 Research &nbsp;|&nbsp; 🧠 AI &nbsp;|&nbsp; 📊 Data Analysis
+
+---
+
+🎓 **Green University of Bangladesh**  
+📚 BSc in CSE — **11th Semester** · Class of **2026**
+
+---
+
+**About Me**
+
+- 🤝 Collaborator on AI-based disease detection research
+- 📊 Interested in data analysis and intelligent systems
+- 🐄 Focused on animal welfare through technology
+- 🎓 Dedicated CSE student with hands-on project experience
+- 🌱 Continuously growing as a developer and researcher
+
+---
+
+[![GitHub](https://img.shields.io/badge/GitHub-rokeyaritucse2026-181717?style=for-the-badge&logo=github)](https://github.com/rokeyaritucse2026)
+
+</td>
+
+</tr>
+</table>
+
+</div>
 
 ---
 
