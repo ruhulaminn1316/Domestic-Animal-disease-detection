@@ -1,8 +1,9 @@
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useAuth } from "../lib/auth-context"
 
 function LoginPage() {
+  const location = useLocation()
   const navigate = useNavigate()
   const { configured, loading, user, loginWithGoogle, loginWithEmail, registerWithEmail, resetPasswordEmail } = useAuth()
   const [authMode, setAuthMode] = useState("signin")
@@ -19,6 +20,16 @@ function LoginPage() {
       navigate("/", { replace: true })
     }
   }, [loading, user, navigate])
+
+  useEffect(() => {
+    const mode = new URLSearchParams(location.search).get("mode")
+    if (mode === "signup") {
+      setAuthMode("signup")
+    }
+    if (mode === "signin") {
+      setAuthMode("signin")
+    }
+  }, [location.search])
 
   const clearFieldError = (fieldName) => {
     setFieldErrors((currentErrors) => ({ ...currentErrors, [fieldName]: "" }))
