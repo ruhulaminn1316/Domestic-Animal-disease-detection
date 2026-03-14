@@ -235,36 +235,37 @@ A `render.yaml` Blueprint is included at the repo root for one-click deployment.
 
 ## 👥 Team
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <h3>Ruhul Amin</h3>
-      <b>Lead Developer</b><br/>
-      Full-Stack Development · Firebase Integration<br/>
-      AI Model Integration · UI/UX Design<br/>
-      Deployment & DevOps<br/><br/>
-      <a href="https://github.com/ruhulaminn1316">
-        <img src="https://img.shields.io/badge/GitHub-ruhulaminn1316-181717?style=flat-square&logo=github" />
-      </a>&nbsp;
-      <a href="https://facebook.com/ruhulaminn1316">
-        <img src="https://img.shields.io/badge/Facebook-ruhulaminn1316-1877F2?style=flat-square&logo=facebook&logoColor=white" />
-      </a>&nbsp;
-      <a href="https://linkedin.com/in/ruhulaminn1316">
-        <img src="https://img.shields.io/badge/LinkedIn-ruhulaminn1316-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />
-      </a>
-    </td>
-    <td align="center" width="50%">
-      <h3>Rokeya Khatun Ritu</h3>
-      <b>Developer & Researcher</b><br/>
-      Research & Documentation<br/>
-      AI Model Training · Testing & QA<br/>
-      Disease Data Collection<br/><br/>
-      <a href="https://github.com/rokeyaritucse2026">
-        <img src="https://img.shields.io/badge/GitHub-rokeyaritucse2026-181717?style=flat-square&logo=github" />
-      </a>
-    </td>
-  </tr>
-</table>
+### 👨‍💻 Ruhul Amin — Lead Developer
+
+> 💻 Web Developer &nbsp;|&nbsp; 🎓 CSE Undergraduate &nbsp;|&nbsp; 💡 Tech Enthusiast &nbsp;|&nbsp; 📚 Lifelong Learner
+
+**🧑‍💼 About**
+
+- 🎓 Studying **Computer Science and Engineering (CSE)** at **Green University of Bangladesh**
+- 💡 Passionate about web development and AI-powered systems
+- 📚 Currently exploring **Django** and backend technologies
+- 🚀 Loves building real-world projects like Management Systems and AI tools
+- 🤝 Actively involved in social volunteering and educational organizations
+- 🎯 Goal: Become a skilled **Full-Stack Developer** and contribute to open-source
+
+**🎓 Education**
+
+🏫 Green University of Bangladesh &nbsp;|&nbsp; BSc in Computer Science and Engineering  
+📅 7th Semester &nbsp;|&nbsp; Expected Graduation: **2026**
+
+**🔗 Connect**
+
+[![GitHub](https://img.shields.io/badge/GitHub-ruhulaminn1316-181717?style=flat-square&logo=github)](https://github.com/ruhulaminn1316)
+[![Facebook](https://img.shields.io/badge/Facebook-ruhulaminn1316-1877F2?style=flat-square&logo=facebook&logoColor=white)](https://facebook.com/ruhulaminn1316)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ruhulaminn1316-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/ruhulaminn1316)
+
+---
+
+### 👩‍💻 Rokeya Khatun Ritu — Developer & Researcher
+
+**🔗 Connect**
+
+[![GitHub](https://img.shields.io/badge/GitHub-rokeyaritucse2026-181717?style=flat-square&logo=github)](https://github.com/rokeyaritucse2026)
 
 ---
 
