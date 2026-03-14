@@ -31,14 +31,20 @@ const requiredKeys = ["apiKey", "authDomain", "projectId", "appId"]
 
 const authErrorMessages = {
   "auth/account-exists-with-different-credential": "এই Email দিয়ে অন্য sign-in method already আছে।",
+  "auth/admin-restricted-operation": "Firebase Console-এ এই auth feature enable করা নেই বা restricted আছে।",
+  "auth/configuration-not-found": "Firebase Authentication configuration incomplete। Console-এ provider setup check করুন।",
   "auth/email-already-in-use": "এই Email address দিয়ে আগে থেকেই account খোলা আছে।",
+  "auth/internal-error": "Firebase side-এ configuration error আছে। Console settings check করুন।",
+  "auth/invalid-api-key": "Firebase API key বা project config সঠিক নয়।",
   "auth/invalid-credential": "Email অথবা Password সঠিক নয়।",
   "auth/invalid-email": "সঠিক Email address দিন।",
   "auth/missing-password": "Password দিন।",
   "auth/network-request-failed": "Network সমস্যা হয়েছে। Internet connection check করুন।",
+  "auth/operation-not-allowed": "Firebase Console-এ এই sign-in method enable করা নেই। Authentication > Sign-in method থেকে enable করুন।",
   "auth/popup-blocked": "Browser popup block করেছে। Popup allow করে আবার চেষ্টা করুন।",
   "auth/popup-closed-by-user": "Google login popup বন্ধ করা হয়েছে। আবার চেষ্টা করুন।",
   "auth/too-many-requests": "অনেকবার চেষ্টা করা হয়েছে। কিছুক্ষণ পরে আবার চেষ্টা করুন।",
+  "auth/unauthorized-domain": "এই domain Firebase Authentication-এ authorized নয়। Firebase Console > Authentication > Settings > Authorized domains-এ add করুন।",
   "auth/user-disabled": "এই account disable করা আছে।",
   "auth/user-not-found": "এই Email দিয়ে কোনো account পাওয়া যায়নি।",
   "auth/weak-password": "Password কমপক্ষে ৬ অক্ষরের হতে হবে।",
@@ -69,7 +75,24 @@ if (isConfigured) {
 function normalizeAuthError(error, fallbackMessage) {
   const code = error?.code
   const message = authErrorMessages[code]
-  return new Error(message || fallbackMessage)
+  const normalizedError = new Error(message || fallbackMessage)
+  normalizedError.code = code || "unknown"
+  normalizedError.originalMessage = error?.message || ""
+  return normalizedError
+}
+
+function normalizeStorageError(error, fallbackMessage) {
+  const code = error?.code
+  const storageMessages = {
+    "storage/object-not-found": "Upload করা file পাওয়া যায়নি। আবার চেষ্টা করুন।",
+    "storage/unauthorized": "Firebase Storage rules এই upload allow করছে না। Storage rules check করুন।",
+    "storage/canceled": "Upload cancel করা হয়েছে।",
+    "storage/unknown": "Firebase Storage error হয়েছে। Storage bucket/config check করুন।"
+  }
+  const normalizedError = new Error(storageMessages[code] || fallbackMessage)
+  normalizedError.code = code || "unknown"
+  normalizedError.originalMessage = error?.message || ""
+  return normalizedError
 }
 
 function buildDisplayNameFromEmail(email) {
@@ -220,8 +243,8 @@ export async function uploadProfilePhoto(file) {
       contentType: file.type
     })
     return await getDownloadURL(storageRef)
-  } catch {
-    throw new Error("Photo upload করা যায়নি। আবার চেষ্টা করুন।")
+  } catch (error) {
+    throw normalizeStorageError(error, "Photo upload করা যায়নি। আবার চেষ্টা করুন।")
   }
 }
 
